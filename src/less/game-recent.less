@@ -1,0 +1,44 @@
+.recent-game {
+    .header {
+        font-size: 46 * @usvw;
+        color: @color-game-recent;
+        padding-top: 36 * @usvw;
+        padding-left: 36 * @usvw;
+        height: 114 * @usvw;
+        text-align: left;
+        border-bottom: 1px solid @color-border-sperator;
+    }
+    .content {
+        width: 1080 * @usvw;
+        overflow-x: auto;
+        .recent-game-zone {
+            white-space: nowrap;
+            height: 246 * @usvw;
+            .recent-game-item {
+                display: block;
+                width: 152 * @usvw;
+                margin-left: 44 * @usvw;
+                margin-right: 44 * @usvw;
+                margin-top: 21 * @usvw;
+                margin-bottom: 21 * @usvw;
+                .game-icon {
+                    width: 152 * @usvw;
+                    height: 152 * @usvw;
+                    border-radius: 14 * @usvw;
+                    margin-bottom: 15 * @usvw;
+                    display: block;
+                }
+                .game-name {
+                    width: 152 * @usvw;
+                    overflow-x: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: 34 * @usvw;
+                    color: @color-font-title;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+}

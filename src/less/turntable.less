@@ -1,0 +1,163 @@
+.turntablegame {
+  .header {
+    width: 100%;
+    height: 336*@cusvw;
+    background: url("../images/turntable_1.jpg") no-repeat;
+    background-size: 100% auto;
+  }
+  .turntable {
+    .time {
+      margin-top: -1px;
+      width: 100%;
+      height: 129*@cusvw;
+      background: url("../images/turntable_2.jpg") no-repeat;
+      background-size: 100% auto;
+      position: relative;
+      span {
+        position: absolute;
+        top: 12*@cusvw;
+        left: 250*@cusvw;
+        font-size: 36*@cusvw;
+        color: #ed5657;
+        font-weight: bold;
+      }
+    }
+    .turntable-bg {
+      width: 100%;
+      height: 710*@cusvw;
+      margin: -1px auto 0 auto;
+      position: relative;
+      background: url("../images/turntable_3.jpg");
+      background-size: 100% auto;
+      .pointer {
+        width: 200*@cusvw;
+        height: 300*@cusvw;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100*@cusvw;
+        margin-top: -230*@cusvw;
+        z-index: 8;
+        cursor: pointer;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .rotate {
+        width: 616*@cusvw;
+        height: 616*@cusvw;
+        position: absolute;
+        left: 70*@cusvw;
+        top: 4*@cusvw;
+        img {
+          width: 100%;
+          height: 100%;
+          -webkit-transition: all 8s cubic-bezier(0,0,0,1.03);
+        }
+      }
+      .xuehua{
+        width:100%;
+        height: 242*@cusvw;
+        position: absolute;
+        left: 0;
+        bottom:11*@cusvw;
+        z-index: 7;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .shuoming{
+    width: 100%;
+    height: 1099*@cusvw;
+    margin: -1px auto 0 auto;
+    position: relative;
+    background: url("../images/turntable_4.jpg");
+    background-size: 100% auto;
+  }
+  .fgx{
+    width: 100%;
+    height: 194*@cusvw;
+    margin: 0px auto 0 auto;
+    position: relative;
+    background: url("../images/turntable_5.jpg");
+    background-size: 100% auto;
+    z-index: 2;
+  }
+  .ewm{
+    width: 100%;
+    height: 385*@cusvw;
+    margin: -2px auto 0 auto;
+    padding-top: 18*@cusvw;
+    position: relative;
+    background: url("../images/turntable_6.jpg");
+    background-size: 100% auto;
+    text-align: center;
+    img{
+      width: 493*@cusvw;
+      height:229*@cusvw;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .turntablegame {
+    width: 750px;
+    margin: 0 auto;
+    .header {
+      height: 336px;
+    }
+    .turntable {
+      .time {
+        height: 129px;
+        margin-top: 0px;
+        span {
+          top: 12px;
+          left: 250px;
+          font-size: 36px;
+        }
+      }
+      .turntable-bg {
+        height: 710px;
+        margin: 0px auto 0 auto;
+        .pointer {
+          width: 200px;
+          height: 300px;
+          margin-left: -100px;
+          margin-top: -230px;
+        }
+        .rotate {
+          width: 616px;
+          height: 616px;
+          position: absolute;
+          left: 70px;
+          top: 4px;
+        }
+        .xuehua{
+          height: 242px;
+          bottom:11px;
+        }
+      }
+    }
+    .shuoming{
+      height: 1099px;
+      margin: 0px auto 0 auto;
+    }
+    .fgx{
+      height: 196px;
+      margin: 0px auto 0 auto;
+    }
+    .ewm{
+      height: 385px;
+      margin: 0px auto 0 auto;
+      padding-top: 18px;
+      img{
+        width: 493px;
+        height: 229px;
+      }
+    }
+  }
+}

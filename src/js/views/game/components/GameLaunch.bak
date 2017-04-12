@@ -1,0 +1,143 @@
+import React from 'react';
+import {ws} from '../../../lib/main.js';
+import history from '../../history.jsx';
+import FollowWexinDialog from '../../common/FollowWexinDialog.jsx';
+import ExitGameDialog from './ExitGameDialog.jsx';
+
+export default class extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            src: null,
+            followDialogHide: true,
+            exitDialogHide: true,
+            exitDialogPopCount: 0,
+            hotGames: []
+        };
+        this.closeExitDialog = this.closeExitDialog.bind(this);
+        this.closeFollowDialog = this.closeFollowDialog.bind(this);
+        this.openFollowDialog = this.openFollowDialog.bind(this);
+    }
+
+    unlistenBefore = null;
+
+    componentDidMount() {
+        document.title = '游戏启动';
+        let _this = this;
+        let {params} = this.props,
+            {id, from} = params;
+        //绑定history监听事件
+        /*this.unlistenBefore = history.listenBefore(function(nextLocation, callback) {
+            alert(1);
+            let {exitDialogPopCount} = _this.state;
+            if(exitDialogPopCount <= 0 && nextLocation.pathname != '/login') {
+                //如果首次退出，弹出提示框
+                _this.setState({
+                    exitDialogHide: false,
+                    exitDialogPopCount: exitDialogPopCount + 1
+                });
+                callback(false);
+            } else {
+                //转向登录页面，或者之后再退出，不再给予提示
+                callback(true);
+            }
+        });*/
+        // 保存埋点信息
+        ws.event({
+            typeCode: 1002,
+            currentCode: 100213,
+            data: {
+                id: id
+            }
+        });
+        //获取游戏名称，显示title
+        ws.get({
+            url: '/api/game/' + id
+        }).then(function(response) {
+            if(response.code == 0) {
+                document.title = response.data.gameName;
+            }
+        });
+        //获取游戏链接并在iframe加载
+        ws.post({
+            url: '/api/game/' + id + '/launch'
+        }).then(function(response) {
+            if(response.code == 0) {
+                alert(response.data);
+                history.replace(response.data);
+                /*_this.setState({
+                    src: response.data
+                });*/
+            } else if(response.code == 401 || response.code == 403) {
+                history.replace('/login?from=' + from);
+            } else {
+                alert(response.msg);
+            }
+        });
+
+        //获取热门游戏列表，取前3，不够3个时，取所有
+        /*ws.get({
+            url: '/api/game/hot'
+        }).then(function(response) {
+            if(response.code === 0) {
+                let hotGames;
+                if(response.data && response.data.length > 3) {
+                    hotGames = _.take(response.data, 3);
+                } else {
+                    hotGames = response.data;
+                }
+                _this.setState({
+                    hotGames: hotGames
+                });
+            } else {
+                alert(response.msg);
+            }
+        })*/
+
+    }
+
+    openFollowDialog() {
+        this.setState({
+            followDialogHide: false
+        });
+    }
+
+    confirmLeave() {
+        history.goBack();
+    }
+
+    closeFollowDialog() {
+        this.setState({
+            followDialogHide: true,
+            exitDialogHide: false
+        });
+    }
+
+    closeExitDialog() {
+        this.setState({
+            exitDialogHide: true
+        })
+    }
+
+    componentWillUnmount() {
+        /*this.unlistenBefore();*/
+    }
+
+    render() {
+        let {src, followDialogHide, exitDialogHide, hotGames} = this.state;
+        /*return (
+            <div className="game-launch-frame">
+                <iframe ref="gameFrame" src={src ? src : ''} className="game-launch-frame"/>
+                <FollowWexinDialog hide={followDialogHide} close={this.closeFollowDialog}/>
+                <ExitGameDialog hide={exitDialogHide} close={this.closeExitDialog}
+                                datas={hotGames}
+                                save={this.openFollowDialog} leave={this.confirmLeave}/>
+            </div>
+
+        )*/
+        return (
+            <div/>
+        )
+    }
+}

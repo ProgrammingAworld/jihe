@@ -1,0 +1,106 @@
+@import "game-zone.less";
+
+.personal-header-short {
+    height: 120 * @usvw;
+    .header-container {
+        .clearfix;
+        .header-title {
+            float: left;
+            .title-container {
+                margin-left: 209 * @usvw;
+                padding-top: 21 * @usvw;
+                .title-name {
+                    font-size: 48 * @usvw;
+                    color: #393a3f;
+                    line-height: 100%;
+                }
+                .title-score {
+                    margin-top: 5 * @usvw;
+                    font-size: 34 * @usvw;
+                    color: #999999;
+
+                }
+            }
+        }
+        .header-btn {
+            float: right;
+            width: 132 * @usvw;
+            height: 120 * @usvw;
+            line-height: 120 * @usvw;
+            background: #00b7ee;
+            color: #fff;
+            font-size: 44 * @usvw;
+            text-align: center;
+        }
+    }
+    .header-img-container {
+        position: absolute;
+        left: 30 * @usvw;
+        top: 12 * @usvw;
+        border-radius: 50%;
+        width: 150 * @usvw;
+        height: 150 * @usvw;
+        z-index: 66;
+        .header-img {
+            padding: 3 * @usvw;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 0px 4px rgba(0,0,0,.5);
+            display: block;
+            border: 1px solid #fff;
+            background: #ffffff;
+            overflow: hidden;
+        }
+    }
+}
+
+.game-icon {
+    width: 152 * @usvw;
+    height: 152 * @usvw;
+    display: block;
+    border-radius: 30 * @usvw;
+    background: @color-unknow;
+}
+
+.follow-weixin-dialog {
+    &.modal {
+        .modal-dialog {
+            height: 752 * @usvw;
+            width: 800 * @usvw;
+            border-radius: 20 * @usvw;
+            padding: 0;
+            left:1080 * @usvw /2 - 400 * @usvw;
+            top: 300 * @usvw;
+            .modal-header {
+                height: 117 * @usvw;
+                width: 100%;
+                text-align: center;
+                padding-top: 42 * @usvw;
+                font-size: 46 * @usvw;
+                color: @color-font-title;
+                border-bottom: 1px solid @color-border-sperator;
+            }
+            .modal-body {
+                .follow-img {
+                    width: 800 * @usvw;
+                    height: 800 * @usvw;
+                    display: block;
+                    margin: 0 auto;
+                    padding: 120px;
+                    margin-top: -94 * @usvw;
+                    margin-bottom: -144 * @usvw;
+                }
+            }
+            .modal-footer {
+                text-align: center;
+                font-size: 36 * @usvw;
+                color: @color-blue;
+                .follow-info {
+                    user-select: none;
+                    -webkit-user-select: none;
+                }
+            }
+        }
+    }
+}

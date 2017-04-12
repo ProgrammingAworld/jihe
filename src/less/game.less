@@ -1,0 +1,86 @@
+@import 'game-recent.less';
+@import 'game-hot.less';
+@import 'game-info.less';
+@import 'game-new-zone.less';
+
+.switcher-container {
+    width: 1080 * @usvw;
+    height: 348 * @usvw;
+    background: #b5b5b5;
+    overflow: hidden;
+    .carousel-img-item {
+        width: 1080 * @usvw !important;
+        height: 348 * @usvw !important;
+        &.unknow {
+            background: gray;
+        }
+    }
+    .react-swipe-container {
+        width: 100%;
+    }
+    .switcher-zone {
+        position: relative;
+        list-style: none;
+        .clearfix;
+        left: @baseszie * 0.5px - 60 * @usvw * @usvm;
+        bottom: 48 * @usvw;
+        > li {
+            float: left;
+            margin-right: 24 * @usvw;
+            &:last-child {
+                margin-right: 0;
+            }
+            .carousel-switcher-item {
+                display: block;
+                background: #a0a0a0;
+                height: 21 * @usvw;
+                width: 21 * @usvw;
+                border-radius: 50%;
+                opacity: .7;
+                &.active {
+                    background: white;
+                    opacity:1.0;
+                }
+            }
+        }
+    }
+}
+
+.game-zone-separator {
+    width: 100%;
+    height: 24 * @usvw;
+    background: @color-border-sperator;
+}
+
+.game-tab-box {
+    .game-tab {
+        border-bottom: 1px solid @color-border-sperator;
+        .game-tab-container {
+            .clearfix;
+            list-style: none;
+            padding-left: 0;
+            .game-tab-item {
+                padding-top: 33 * @usvw;
+                float: left;
+                display: block;
+                width: 25%;
+                margin: 0;
+                text-align: center;
+                height: 114 * @usvw;
+                cursor: pointer;
+                font-size: 46 * @usvw;
+                &.active {
+                    background-image: url(../images/game-tab-underline.png);
+                    background-position: bottom center;
+                    background-repeat: no-repeat;
+                    background-size: 50 * @usvw 6 * @usvw;
+                    color: #0096ff;
+                }
+            }
+        }
+    }
+    .game-box {
+        padding-left: 36 * @usvw;
+        padding-right: 36 * @usvw;
+    }
+}

@@ -1,0 +1,29 @@
+.exchange{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,.7);
+  position: fixed;
+  z-index: 889;
+  .box{
+    width:100%;
+    height: auto;
+    position: absolute;
+    top:296*@cusvw;
+    left:0;
+    text-align: center;
+    img{
+      width: 554*@cusvw;
+      height: auto;
+    }
+  }
+}
+@media (min-width:750px ) {
+  .exchange{
+    .box{
+      top:106px;
+      img{
+        width: 554px;
+      }
+    }
+  }
+}

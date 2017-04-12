@@ -1,0 +1,200 @@
+.gift-separator {
+  background: @color-unknow;
+  height: 60 * @usvw;
+  width: 100%;
+}
+
+.gift-tab-box {
+  .gift-tab {
+    border-bottom: 1px solid @color-border-sperator;
+    .gift-tab-container {
+      .clearfix;
+      list-style: none;
+      padding-left: 0;
+      .gift-tab-item {
+        padding-top: 36 * @usvw;
+        float: left;
+        display: block;
+        width: 33.3333%;
+        margin: 0;
+        text-align: center;
+        height: 114 * @usvw;
+        cursor: pointer;
+        font-size: 46 * @usvw;
+        &.active {
+          background-image: url(../images/gift-tab-underline.png);
+          background-position: bottom center;
+          background-repeat: no-repeat;
+          background-size: 111 * @usvw 6 * @usvw;
+          color: #0096ff;
+        }
+      }
+    }
+  }
+  .game-box {
+    padding-left: 36 * @usvw;
+    padding-right: 36 * @usvw;
+  }
+}
+
+.gift-item {
+  border-bottom: 1px solid @color-border-sperator;
+  height: 240 * @usvw;
+  width: 100%;
+  .gift-icon-zone {
+    width: 179 * @usvw;
+  }
+  .gift-info-zone {
+    width: 646 * @usvw;
+    margin-top: 36 * @usvw;
+    .gift-name {
+      font-size: 46 * @usvw;
+      color: @color-font-title;
+    }
+    .gift-introduction {
+      margin-top: 5 * @usvw;
+      font-size: 32 * @usvw;
+      color: @color-font-comment;
+      .btn-more {
+        color: @color-blue;
+        padding-left: 6 * @usvw;
+      }
+    }
+    .gift-percent {
+      margin-top: 5 * @usvw;
+      .progress {
+        height: 30 * @usvw;
+        .progress-bar {
+          line-height: 30 * @usvw;
+          background: @color-progress;
+        }
+      }
+    }
+    .gift-num {
+      margin-top: 5 * @usvw;
+      font-size: 32 * @usvw;
+      color: @color-font-comment;
+    }
+  }
+  .gift-btn-zone {
+    .clearfix;
+    .gift-btn {
+      float: right;
+      font-size: 36 * @usvw;
+      color: @color-gift-btn;
+      cursor: pointer;
+      float: right;
+      border: 1px solid @color-border-gift-btn;
+      width: 140 * @usvw;
+      height: 77 * @usvw;
+      border-radius: 8 * @usvw;
+      text-align: center;
+      line-height: 77 * @usvw;
+    }
+  }
+}
+
+.gift-more-dialog {
+  &.modal {
+    .modal-dialog {
+      padding-top: 78 * @usvw;
+      padding-left: 65 * @usvw;
+      padding-right: 65 * @usvw;
+      padding-bottom: 48 * @usvw;
+      background: #ffffff;
+      width: 800 * @usvw;
+      left: 140 * @usvw;
+      top: 441 * @usvw;
+      border-radius: 20 * @usvw;
+      .modal-body {
+        min-height: 350 * @usvw;
+        max-height: 350 * @usvw;
+        overflow-y: auto;
+        margin-bottom: 30 * @usvw;
+      }
+      .modal-footer {
+        .clearfix;
+        .btn {
+          padding-right: 3 * @usvw;
+          font-size: 46 * @usvw;
+          float: right;
+          border-style: none;
+          &.btn-confirm {
+            color: @color-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.collar-number-dialog {
+  &.modal {
+    .modal-dialog {
+      padding-top: 38 * @usvw;
+      padding-left: 0 * @usvw;
+      padding-right: 0 * @usvw;
+      padding-bottom: 0 * @usvw;
+      background: #ffffff;
+      width: 800 * @usvw;
+      left: 140 * @usvw;
+      top: 441 * @usvw;
+      border-radius: 20 * @usvw;
+      .modal-header {
+        height: 87 * @usvw;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 32 * @usvw;
+        font-size: 52 * @usvw;
+        color: #000000;
+        border-bottom: 1px solid @color-border-sperator;
+      }
+      .modal-body {
+        min-height: 350 * @usvw;
+        min-height: 350 * @usvw;
+        max-height: 750 * @usvw;
+        overflow-y: auto;
+        margin-bottom: 30 * @usvw;
+        .CollarNumber {
+          width: 687 * @usvw;
+          height: 80 * @usvw;
+          line-height: 80 * @usvw;
+          background: #ebebeb;
+          margin: 40 * @usvw auto;
+          border-radius: 10 * @usvw;
+          text-align: center;
+          color: #323232;
+          font-size: 46 * @usvw;
+        }
+        .shuoming {
+          width: 687 * @usvw;
+          margin: 0 auto;
+          font-size: 38 * @usvw;
+          color: #888888;
+          white-space: pre-wrap;
+        }
+      }
+      .modal-footer {
+        border-top: 1px solid @color-border-sperator;
+        .clearfix;
+        .btn {
+          width: 50%;
+          text-align: center;
+          padding-top: 30 * @usvw;
+          padding-bottom: 30 * @usvw;
+          font-size: 46 * @usvw;
+          float: left;
+          border-style: none;
+          &.btn-confirm {
+            color: @color-blue;
+          }
+          &.btn-cancel{
+            color: @color-blue;
+            border-right: 1px solid @color-border-sperator;
+          }
+        }
+      }
+    }
+  }
+}
+

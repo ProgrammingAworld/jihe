@@ -1,0 +1,87 @@
+@import 'variables.less';
+@import 'common.less';
+@import 'helper.less';
+@import 'progress.less';
+@import 'modal.less';
+@import 'game.less';
+@import 'game-detail.less';
+@import 'gift.less';
+@import 'mygames.less';
+@import 'system.less';
+@import "chrismas.less";
+@import "popup.less";
+@import "turntable.less";
+@import "package.less";
+@import "exchange.less";
+@import "floatingwindow.less";
+@import "jihe.less";
+
+html, body, div#app {
+    width: 100%;
+    height: 100%;
+}
+
+#container {
+    // padding-bottom: 153 * @usvw;
+    overflow-x: hidden;
+}
+
+footer.footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 153 * @usvw;
+    padding-top: 24 * @usvw;
+    padding-left: 109 * @usvw;
+    background: #fff;
+    border-top: 1px solid @color-border-sperator;
+    .menu {
+        float: left;
+        text-align: center;
+        font-size: 34 * @usvw;
+        margin-left: 207 * @usvw;
+        text-decoration: none;
+        color: #888888;
+        .user-select;
+        &:first-child {
+            margin-left: 0;
+        }
+        .menu-icon {
+            position: relative;
+            color: #888888;
+            .iconfont {
+                font-size: 55 * @usvw;
+            }
+        }
+        .menu-text {
+            padding-top: 10 * @usvw;
+        }
+    }
+    .active{
+        color: #2697fc;
+        .menu-icon {
+            color: #2697fc;
+        }
+    }
+}
+
+.game-launch-frame {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 960px) {
+    #app {
+        width: 750px !important;
+        position: absolute;
+        left: auto;
+    }
+    #container {
+        position: relative;
+    }
+    footer.footer {
+        width: 750px !important;
+        left: auto;
+    }
+}

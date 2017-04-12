@@ -1,0 +1,108 @@
+.popup{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,.7);
+  position: fixed;
+  z-index: 888;
+  top: 0;
+  left: 0;
+  .box{
+    width: 610*@cusvw;
+    height: auto;
+    position: absolute;
+    top:120*@cusvw;
+    left:86*@cusvw;
+    .header{
+      height: 72*@cusvw;
+      a{
+        float: right;
+        img{
+          width: 62*@cusvw;
+          height: 62*@cusvw;
+        }
+      }
+    }
+    .content{
+      width: 580*@cusvw;
+      height: 714*@cusvw;
+      background: url("../images/tcbg.png") no-repeat;
+      background-size: 100% auto;
+      .fontimg{
+        margin: 0 auto 0 auto;
+        padding-top: 51*@cusvw ;
+        width: 367*@cusvw;
+        height: 454*@cusvw;
+        img{
+          width: 367*@cusvw;
+          height: 403*@cusvw;
+        }
+      }
+      .button{
+        width: 333*@cusvw;
+        height: 99*@cusvw;
+        line-height: 99*@cusvw;
+        margin: 54*@cusvw auto 36*@cusvw auto;
+        background: url("../images/tcbottom.png");
+        background-size: 100% auto;
+        text-align: center;
+        a{
+          font-family: "PingFang-SC-Regular";
+          color: #f13e32;
+          font-size: 36*@cusvw;
+          font-weight: normal;
+        }
+      }
+      .shuoming{
+        font-size: 22*@cusvw;
+        text-align: center;
+        color: #ffffff;
+        font-family: "PingFang-SC-Medium";
+      }
+    }
+  }
+}
+@media (min-width:750px ) {
+  .popup{
+    .box {
+      width: 610px;
+      position: relative;
+      margin: 120px auto 0 auto;
+      top:0;
+      left:0;
+      .header{
+        height: 72px;
+        a{
+          img{
+            width: 62px;
+            height: 62px;
+          }
+        }
+      }
+      .content{
+        width: 580px;
+        height: 714px;
+        .fontimg{
+          padding-top: 51px;
+          width: 367px;
+          height: 454px;
+          img{
+            width: 367px;
+            height: 403px;
+          }
+        }
+        .button{
+          width: 333px;
+          height: 99px;
+          line-height: 99px;
+          margin: 54px auto 36px auto;
+          a{
+            font-size: 36px;
+          }
+        }
+        .shuoming{
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

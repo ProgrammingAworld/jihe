@@ -1,0 +1,158 @@
+.chrismas {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  .header {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  .card {
+    width: 100%;
+    height: 250*@cusvw;
+    background: url("../images/chrismas_2.png") no-repeat;
+    background-size: 100% auto;
+    padding-top: 75*@cusvw;
+    position: relative;
+    padding-left: 74*@cusvw;
+    .cardimg{
+      float: left;
+      position: relative;
+      margin-right: 20*@cusvw;
+      img{
+        width: 135*@cusvw;
+        height: 135*@cusvw;
+        border-radius: 4px;
+      }
+      .number{
+        position: absolute;
+        right: -12*@cusvw;
+        top:-18*@cusvw;
+        width: 40*@cusvw;
+        height: 40*@cusvw;
+        background: #ff0000;
+        border-radius: 24*@cusvw;
+        border: 1px solid #fff;
+        color: #ffffff;
+        text-align: center;
+        line-height: 40*@cusvw;
+        font-size: 24*@cusvw;
+        font-family: "PingFang-SC-Regular";
+
+      }
+    }
+  }
+  .anniu{
+    width: 100%;
+    height: 92*@cusvw;
+    background: url("../images/chrismas_3.png") no-repeat;
+    background-size: 100% auto;
+    a{
+      float: right;
+      color: #fff600;
+      font-size: 30*@cusvw;
+      text-decoration: underline;
+      margin-top: 20*@cusvw;
+      margin-right: 70*@cusvw;
+    }
+  }
+  .guize{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: -1px;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  .fengexian{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  .weixinqun{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  .erweima{
+    width: 100%;
+    height: 272*@cusvw;
+    background: url("../images/chrismas_7.png") no-repeat;
+    background-size: 100% auto;
+    text-align: center;
+    padding-top: 20*@cusvw;
+    img{
+      width: 490*@cusvw;
+
+    }
+  }
+  .footer{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: -1px;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .chrismas {
+    .card {
+      padding-top: 75px;
+      padding-left: 74px;
+      height: 250px;
+      .cardimg{
+        margin-right: 20px;
+        img{
+          width: 135px;
+          height: 135px;
+        }
+        .number{
+          right: -12px;
+          top:-18px;
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          line-height: 40px;
+          font-size: 24px;
+
+        }
+      }
+    }
+    .anniu{
+      height: 93px;
+      a{
+        font-size: 30px;
+      }
+    }
+    .erweima{
+      height: 272px;
+      padding-top: 20px;
+      img{
+        width: 490px;
+      }
+    }
+  }
+}

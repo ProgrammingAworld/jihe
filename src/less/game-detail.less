@@ -1,0 +1,146 @@
+.game-detail {
+    .game-header {
+        .clearfix;
+        height: 273 * @usvw;
+        width: 100%;
+        padding-left: 36 * @usvw;
+        padding-right: 36 * @usvw;
+        .game-icon {
+            margin-top: 40 * @usvw;
+            float: left;
+            width: 192 * @usvw;
+            height: 192 * @usvw;
+        }
+        .game-info {
+            float: left;
+            margin-left: 27 * @usvw;
+            margin-top: 68 * @usvw;
+            width: 600 * @usvw;
+            .game-name {
+                display: block;
+                font-size: 46 * @usvw;
+                color: @color-font-normal;
+            }
+            .game-introduction {
+                font-size: 36 * @usvw;
+                color: @color-font-comment-2;
+                margin-top: 18 * @usvw;
+            }
+        }
+        .game-btn {
+            float: right;
+            width: 150 * @usvw;
+            height: 90 * @usvw;
+            line-height: 90 * @usvw;
+            border-radius: 8 * @usvw;
+            text-align: center;
+            line-height: 90 * @usvw;
+            margin-top: 91 * @usvw;
+            background: @color-blue;
+            font-size: 40 * @usvw;
+            color: @color-white;
+        }
+    }
+    .game-box {
+        .box-header {
+            padding-left: 36 * @usvw;
+            height: 87 * @usvw;
+            background: @color-bg-title-2;
+            .header-title {
+                height: 87 * @usvw;
+                line-height: 87 * @usvw;
+                font-size: 42 * @usvw;
+                color: @color-font-title-2;
+                font-weight: normal;
+            }
+        }
+        &.game-screenshot .box-body {
+            padding-top: 30 * @usvw;
+            padding-bottom: 30 * @usvw;
+            height: 758 * @usvw;
+            width: 1080 * @usvw;
+            overflow-x: auto;
+            .game-screenshot-container {
+                .max-content;
+                padding-left: 24 * @usvw;
+                padding-right: 24 * @usvw;
+                .game-screenshot-item {
+                    display: block;
+                    float: left;
+                    width: 393 * @usvw;
+                    height: 698 * @usvw;
+                    background-color: @color-unknow;
+                    margin-left: 12 * @usvw;
+                    margin-right: 12 * @usvw;
+                }
+            }
+        }
+        &.game-description .box-body {
+            padding-left: 36 * @usvw;
+            padding-right: 36 * @usvw;
+            padding-top: 33 * @usvw;
+            padding-bottom: 33 * @usvw;
+            font-size: 36 * @usvw;
+            color: @color-font-normal-2;
+            .btn-expand-toggle {
+                color: @color-font-weight-3;
+            }
+        }
+        &.game-gift .box-body {
+            padding-left: 36 * @usvw;
+            padding-right: 36 * @usvw;
+        }
+    }
+}
+
+.game-detail-gift-item {
+    .clearfix;
+    //height: 207 * @usvw;
+    height: auto;
+    padding-bottom:22 * @usvw;
+    border-bottom: 1px solid @color-border-sperator;
+    .gift-info {
+        width: 646 * @usvw;
+        float: left;
+        .gift-name {
+            margin-top: 24 * @usvw;
+            font-size: 40 * @usvw;
+            color: @color-font-title;
+        }
+        .gift-introduction {
+            margin-top: 3 * @usvw;
+            font-size: 32 * @usvw;
+            color: @color-font-comment;
+            .btn-more {
+                color: @color-blue;
+                padding-left: 6 * @usvw;
+            }
+        }
+        .gift-percent {
+            margin-top: 3 * @usvw;
+            .progress {
+                height: 20 * @usvw;
+                .progress-bar {
+                    line-height: 20 * @usvw;
+                    background: @color-blue;
+                }
+            }
+        }
+        .gift-num {
+            margin-top: 3 * @usvw;
+            font-size: 32 * @usvw;
+            color: @color-font-comment;
+        }
+    }
+    .gift-btn {
+        float: right;
+        font-size: 36 * @usvw;
+        width: 140 * @usvw;
+        height: 77 * @usvw;
+        line-height: 77 * @usvw;
+        text-align: center;
+        margin-top: 72 * @usvw;
+        border-radius: 8 * @usvw;
+        border: 1px solid @color-border-gift-btn;
+    }
+}

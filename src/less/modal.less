@@ -1,0 +1,85 @@
+.modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    outline: 0 none;
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    .modal-dialog {
+        background: #ffffff;
+        position: fixed;
+        top: 10%;
+        left: 10%;
+        width: 70%;
+    }
+}
+
+.modal.exit-game-dialog {
+    .modal-dialog {
+        width: 1014 * @usvw;
+        left: 33 * @usvw;
+        top: 355 * @usvw;
+        border-radius: 16 * @usvw;
+    }
+    .modal-header {
+        text-align: center;
+        padding-top: 36 * @usvw;
+        padding-bottom: 36 * @usvw;
+        font-size: 46 * @usvw;
+        color: #1e1e1e;
+        font-weight: normal;
+        border-bottom: 1px solid @color-border-sperator;
+        .clearfix;
+        .modal-close {
+            float: right;
+            width: 39 * @usvw;
+            height: 39 * @usvw;
+            margin-right: 36 * @usvw;
+        }
+    }
+    .modal-body {
+        .clearfix;
+        padding-top: 36 * @usvw;
+        .game-item {
+            margin-left: 45 * @usvw;
+            width: 201 * @usvw;
+            float: left;
+            .item-icon {
+                width: 201 * @usvw;
+                height: 201 * @usvw;
+                border-radius: 32 * @usvw;
+            }
+            .item-name {
+                text-align: center;
+                color: #1e1e1e;
+            }
+        }
+    }
+    .modal-footer {
+        .clearfix;
+        padding-top: 52 * @usvw;
+        padding-bottom: 52 * @usvw;
+        .btn {
+            float: left;
+            width: 231 * @usvw;
+            border-radius: 8 * @usvw;
+            height: 81 * @usvw;
+            line-height: 81 * @usvw;
+            font-size: 40 * @usvw;
+            color: #ffffff;
+            background-color: #2697fc;
+            text-align: center;
+            &.btn-save {
+                margin-left: 225 * @usvw;
+            }
+            &.btn-leave {
+                margin-left: 102 * @usvw;
+            }
+        }
+    }
+}

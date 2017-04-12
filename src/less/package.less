@@ -1,0 +1,28 @@
+.package{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,.7);
+  position: fixed;
+  z-index: 889;
+  .box{
+    width:100%;
+    height: auto;
+    position: absolute;
+    top:0;
+    left:0;
+    text-align: center;
+    img{
+      width: 595*@cusvw;
+      height: auto;
+    }
+  }
+}
+@media (min-width:750px ) {
+  .package{
+    .box{
+      img{
+        width: 595px;
+      }
+    }
+  }
+}
