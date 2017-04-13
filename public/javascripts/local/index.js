@@ -8717,13 +8717,13 @@
 
 	var _AdminRouter2 = _interopRequireDefault(_AdminRouter);
 
-	var _reactRedux = __webpack_require__(610);
+	var _reactRedux = __webpack_require__(611);
 
-	var _redux = __webpack_require__(619);
+	var _redux = __webpack_require__(620);
 
-	var _reactRouterRedux = __webpack_require__(640);
+	var _reactRouterRedux = __webpack_require__(641);
 
-	var _reduxThunk = __webpack_require__(645);
+	var _reduxThunk = __webpack_require__(646);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -8731,7 +8731,7 @@
 
 	var _history3 = _interopRequireDefault(_history2);
 
-	var _reducers = __webpack_require__(646);
+	var _reducers = __webpack_require__(647);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -47056,6 +47056,10 @@
 
 	var _JiheView2 = _interopRequireDefault(_JiheView);
 
+	var _JiheViewForYou = __webpack_require__(610);
+
+	var _JiheViewForYou2 = _interopRequireDefault(_JiheViewForYou);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// import GameDetailPage from './containers/GameDetailPage.jsx';
@@ -47064,7 +47068,8 @@
 	exports.default = _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: 'jihe' },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _JiheView2.default })
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _JiheView2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'detail', component: _JiheViewForYou2.default })
 	);
 
 /***/ },
@@ -47408,14 +47413,297 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(300);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _main = __webpack_require__(546);
+
+	var _App = __webpack_require__(570);
+
+	var _App2 = _interopRequireDefault(_App);
+
+	var _reactSwipe = __webpack_require__(558);
+
+	var _reactSwipe2 = _interopRequireDefault(_reactSwipe);
+
+	var _Popup = __webpack_require__(572);
+
+	var _Popup2 = _interopRequireDefault(_Popup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _class = function (_React$Component) {
+	    _inherits(_class, _React$Component);
+
+	    function _class(props) {
+	        _classCallCheck(this, _class);
+
+	        var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
+
+	        _this2.state = {
+	            activeIndex: 0,
+	            listDatas: [{
+	                "aid": "2652512158_1",
+	                "title": "她在莫干山用一幢小城堡圆了美式乡村梦，那里还有花园泳池和豌豆公主",
+	                "cover": "http://mmbiz.qpic.cn/mmbiz_jpg/tDsnpp1NDxrJoopwTKJiaD7YG5icfBHyGubzodXyibChBibknMUia1icyD7fy3OndAJrg48njzJjM7oMrqWLAc3efibkQ/0?wx_fmt=jpeg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=2652512158&idx=1&sn=18140582ebcf3f157f5d508b2793c6dc&scene=19#wechat_redirect",
+	                "digest": "这是我在十八迈的第一夜，有酒，有肉，有朋友。",
+	                "appmsgid": 2652512158,
+	                "itemidx": 1,
+	                "type": 9
+	            }, {
+	                "aid": "402134799_1",
+	                "title": "遥远的山：是走过远山近水后梦回故里，让心沉淀的地方",
+	                "cover": "http://mmbiz.qpic.cn/mmbiz/tDsnpp1NDxoEooVDThZibLgRUyic7mAESsUTDJDYIf5c7lXSXD4Gbic4Kc2uC7Un9tEibH2oiabxInkrEBRg0e5pgaQ/0?wx_fmt=jpeg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=402134799&idx=1&sn=04337612db503236e74dbfc98d906131&scene=19#wechat_redirect",
+	                "digest": "每个人心中都有一个梦，一个落叶归根的梦。而老王的这个梦，落在了离家更近的莫干山。这里有山、有林、有水、有田，还有一方精致的庭院。在这里，山不在遥远，而离梦想更近。",
+	                "appmsgid": 402134799,
+	                "itemidx": 1,
+	                "type": 6,
+	                "oldPrice": 3
+	            }, {
+	                "aid": "403380281_1",
+	                "title": "陌野乡墅：这也许是每个人都幻想过的Dream House",
+	                "cover": "http://mmbiz.qpic.cn/mmbiz/tDsnpp1NDxqxZx14EXZdicE67eGiaAhq1vg8wUicmUB4iaOOVhCzACEibjP9Z8tOTjebdglDbXiaAANs51u1MNLXKL8w/0?wx_fmt=jpeg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=403380281&idx=1&sn=26426574a160f4a3b2faf91b0623df9f&scene=19#wechat_redirect",
+	                "digest": "它可能是莫干山包栋最具性价比的民宿了。",
+	                "appmsgid": 403380281,
+	                "itemidx": 1,
+	                "type": 6
+	            }, {
+	                "aid": "505024819_1",
+	                "title": "墨田：去莫干山避暑，茶园竹林漂流的清凉还不够，这家民宿用本真生活打动你",
+	                "cover": "http://mmbiz.qpic.cn/mmbiz/tDsnpp1NDxq0nPSsFpOGEia9h1AC50qGv2Wp8wfuicDMmlcP4Ms9b4wZLWmqxKn8mQ8QWiczsS2FkOWozkBFicFWJQ/0?wx_fmt=jpeg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=505024819&idx=1&sn=cffe8785ae379c3df41b0cbc00e60693&scene=19#wechat_redirect",
+	                "digest": "东方传统文化，自然乡土生活。",
+	                "appmsgid": 505024819,
+	                "itemidx": 1,
+	                "type": 6
+	            }, {
+	                "aid": "403696504_1",
+	                "title": "蕨宿：谁会在不惑之年扔掉铁饭碗，跑到莫干山上造秘密花园？",
+	                "cover": "http://mmbiz.qpic.cn/mmbiz/tDsnpp1NDxoOWUwX4wVTycq2YlXeVoU26gAQ3eDQdsSjyj77ahL0J1FTqoQibkSEZ7OrnS30G3DtMJ3Y9js6J0A/0?wx_fmt=jpeg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=403696504&idx=1&sn=a723ef77e54eb16d0d18d68d02970a41&scene=19#wechat_redirect",
+	                "digest": "一个充满惊喜的女人渴望自己是山野里的蕨草，从此自由而恣意的生长。",
+	                "appmsgid": 403696504,
+	                "itemidx": 1,
+	                "type": 6
+	            }],
+	            datas: [{
+	                "aid": "2652512606_1",
+	                "title": "这12间房躲在临安山下，排成一个小京都，日式静谧和峡谷激情相爱了",
+	                "cover": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491394323814&di=c73782dce518f3bdf5e59bba10ded64a&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160220%2Fmp59769915_1455974144064_13.jpeg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=2652512606&idx=1&sn=bdddf2cac403f4a076d0d2f47bab3865&scene=19#wechat_redirect",
+	                "digest": "浙西大龙湾",
+	                "appmsgid": 2652512606,
+	                "itemidx": 1,
+	                "type": 9
+	            }, {
+	                "aid": "505023564_1",
+	                "title": "静庐：怎样才能睡到王凯……睡过的床？！",
+	                "cover": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491394323813&di=14ec42c377cd957efaf321640939fdeb&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160627%2Fb6b4375e564441c8ab51c674fc68754f_th.jpg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=505023564&idx=1&sn=bb54c624038b61a24052e773c7b4988e&scene=19#wechat_redirect",
+	                "digest": "睡男神睡过的床，泡男神泡过的浴缸！",
+	                "appmsgid": 505023564,
+	                "itemidx": 1,
+	                "type": 6
+	            }, {
+	                "aid": "402651802_1",
+	                "title": "岩朵：在风景如画的岩朵，翠绿青山只是背景，体验的不仅仅是那一刻度假的轻松。",
+	                "cover": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491394323813&di=d3e7a90cac081e22244f1dad428e7593&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160227%2Fmp60786630_1456512511181_5.jpeg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=402651802&idx=1&sn=c665804c9abe06c8c8557a4fa62c7b21&scene=19#wechat_redirect",
+	                "digest": "在岩朵，体验的不仅仅是那一刻度假的轻松。这里有小鲜肉烧的一手好菜这就是岩朵，承载着一群爱玩的年轻人的梦想。",
+	                "appmsgid": 402651802,
+	                "itemidx": 1,
+	                "type": 6
+	            }, {
+	                "aid": "403676409_1",
+	                "title": "白描：刻意精致和人间烟火的微妙平衡，这家杭州郊区的民宿找到了",
+	                "cover": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491394323813&di=63403c764903e0dfad05153f645d083a&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20165_29_20%2Fa32z0x4141795153352.jpg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=403676409&idx=1&sn=521f53022674a52033f3902b9d62cb60&scene=19#wechat_redirect",
+	                "digest": "阳春白雪和下里巴人都有了，不必挑。",
+	                "appmsgid": 403676409,
+	                "itemidx": 1,
+	                "type": 6
+	            }, {
+	                "aid": "2652518202_1",
+	                "title": "套路太深！杭州景区里新开的这家民宿，竟神秘得连本地人都找不到！",
+	                "cover": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491394323813&di=8f56f46fa04c4313552a8dc78a840191&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160519%2F038c6be95a02495caa59a44d4bbcb558_th.jpg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=2652518202&idx=1&sn=ccef8bdd20da722e1e02105e4a36a120&scene=19#wechat_redirect",
+	                "digest": "茶田里的深度睡眠",
+	                "appmsgid": 2652518202,
+	                "itemidx": 1,
+	                "type": 9
+	            }, {
+	                "aid": "2652518202_2",
+	                "title": "套路太深！杭州景区里新开的这家民宿，竟神秘得连本地人都找不到！",
+	                "cover": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491394323813&di=8f56f46fa04c4313552a8dc78a840191&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160519%2F038c6be95a02495caa59a44d4bbcb558_th.jpg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=2652518202&idx=1&sn=ccef8bdd20da722e1e02105e4a36a120&scene=19#wechat_redirect",
+	                "digest": "茶田里的深度睡眠",
+	                "appmsgid": 2652518202,
+	                "itemidx": 1,
+	                "type": 9
+	            }, {
+	                "aid": "2652518202_3",
+	                "title": "套路太深！杭州景区里新开的这家民宿，竟神秘得连本地人都找不到！",
+	                "cover": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491394323813&di=8f56f46fa04c4313552a8dc78a840191&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160519%2F038c6be95a02495caa59a44d4bbcb558_th.jpg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=2652518202&idx=1&sn=ccef8bdd20da722e1e02105e4a36a120&scene=19#wechat_redirect",
+	                "digest": "茶田里的深度睡眠",
+	                "appmsgid": 2652518202,
+	                "itemidx": 1,
+	                "type": 9
+	            }, {
+	                "aid": "2652518202_4",
+	                "title": "套路太深！杭州景区里新开的这家民宿，竟神秘得连本地人都找不到！",
+	                "cover": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491394323813&di=8f56f46fa04c4313552a8dc78a840191&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160519%2F038c6be95a02495caa59a44d4bbcb558_th.jpg",
+	                "link": "http://mp.weixin.qq.com/s?__biz=MzAwNDE4NTcwNw==&mid=2652518202&idx=1&sn=ccef8bdd20da722e1e02105e4a36a120&scene=19#wechat_redirect",
+	                "digest": "茶田里的深度睡眠",
+	                "appmsgid": 2652518202,
+	                "itemidx": 1,
+	                "type": 9
+	            }]
+	        };
+	        _this2.getItemViews = _this2.getItemViews.bind(_this2);
+	        _this2.getSpringItemViews = _this2.getSpringItemViews.bind(_this2);
+	        return _this2;
+	    }
+
+	    _createClass(_class, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            document.title = '几何民宿';
+	            var _this = this;
+	        }
+	    }, {
+	        key: 'getItemViews',
+	        value: function getItemViews() {
+	            return _.map(this.state.listDatas, function (item) {
+	                return _react2.default.createElement(
+	                    'li',
+	                    { key: item.aid },
+	                    _react2.default.createElement('img', { src: item.cover, alt: '' }),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        item.title
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'price' },
+	                        '\uFFE5 ',
+	                        item.type
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'oldPrice', style: { display: item.oldPrice ? "inline-block" : "none" } },
+	                        '\uFFE5',
+	                        item.oldPrice
+	                    )
+	                );
+	            });
+	        }
+	    }, {
+	        key: 'getSpringItemViews',
+	        value: function getSpringItemViews() {
+	            return _.map(this.state.datas, function (item) {
+	                return _react2.default.createElement(
+	                    'li',
+	                    { key: item.aid },
+	                    _react2.default.createElement('img', { src: item.cover, alt: '' }),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        item.title
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'price' },
+	                        '\uFFE5 ',
+	                        item.type
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'oldPrice', style: { display: item.oldPrice ? "inline-block" : "none" } },
+	                        '\uFFE5',
+	                        item.oldPrice
+	                    )
+	                );
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                _App2.default,
+	                { active: 'youxi' },
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(
+	                        'section',
+	                        { className: 'shopperowner' },
+	                        _react2.default.createElement(
+	                            'h3',
+	                            null,
+	                            '\u5E97\u957F\u63A8\u8350'
+	                        ),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            null,
+	                            this.getItemViews()
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'section',
+	                        { className: 'spring' },
+	                        _react2.default.createElement(
+	                            'h3',
+	                            null,
+	                            '\u6625\u5B63.\u4EB2\u5B50\u6E38'
+	                        ),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            null,
+	                            this.getSpringItemViews()
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return _class;
+	}(_react2.default.Component);
+
+	exports.default = _class;
+
+/***/ },
+/* 611 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	exports.__esModule = true;
 	exports.connect = exports.Provider = undefined;
 
-	var _Provider = __webpack_require__(611);
+	var _Provider = __webpack_require__(612);
 
 	var _Provider2 = _interopRequireDefault(_Provider);
 
-	var _connect = __webpack_require__(616);
+	var _connect = __webpack_require__(617);
 
 	var _connect2 = _interopRequireDefault(_connect);
 
@@ -47425,7 +47713,7 @@
 	exports.connect = _connect2["default"];
 
 /***/ },
-/* 611 */
+/* 612 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -47435,15 +47723,15 @@
 
 	var _react = __webpack_require__(300);
 
-	var _propTypes = __webpack_require__(612);
+	var _propTypes = __webpack_require__(613);
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _storeShape = __webpack_require__(614);
+	var _storeShape = __webpack_require__(615);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
-	var _warning = __webpack_require__(615);
+	var _warning = __webpack_require__(616);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -47513,7 +47801,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(294)))
 
 /***/ },
-/* 612 */
+/* 613 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -47544,13 +47832,13 @@
 	} else {
 	  // By explicitly using `prop-types` you are opting into new production behavior.
 	  // http://fb.me/prop-types-in-prod
-	  module.exports = __webpack_require__(613)();
+	  module.exports = __webpack_require__(614)();
 	}
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(294)))
 
 /***/ },
-/* 613 */
+/* 614 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -47610,14 +47898,14 @@
 
 
 /***/ },
-/* 614 */
+/* 615 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _propTypes = __webpack_require__(612);
+	var _propTypes = __webpack_require__(613);
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -47630,7 +47918,7 @@
 	});
 
 /***/ },
-/* 615 */
+/* 616 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -47660,7 +47948,7 @@
 	}
 
 /***/ },
-/* 616 */
+/* 617 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -47673,23 +47961,23 @@
 
 	var _react = __webpack_require__(300);
 
-	var _storeShape = __webpack_require__(614);
+	var _storeShape = __webpack_require__(615);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
-	var _shallowEqual = __webpack_require__(617);
+	var _shallowEqual = __webpack_require__(618);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _wrapActionCreators = __webpack_require__(618);
+	var _wrapActionCreators = __webpack_require__(619);
 
 	var _wrapActionCreators2 = _interopRequireDefault(_wrapActionCreators);
 
-	var _warning = __webpack_require__(615);
+	var _warning = __webpack_require__(616);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _isPlainObject = __webpack_require__(621);
+	var _isPlainObject = __webpack_require__(622);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
@@ -48061,7 +48349,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(294)))
 
 /***/ },
-/* 617 */
+/* 618 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -48092,7 +48380,7 @@
 	}
 
 /***/ },
-/* 618 */
+/* 619 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48100,7 +48388,7 @@
 	exports.__esModule = true;
 	exports["default"] = wrapActionCreators;
 
-	var _redux = __webpack_require__(619);
+	var _redux = __webpack_require__(620);
 
 	function wrapActionCreators(actionCreators) {
 	  return function (dispatch) {
@@ -48109,7 +48397,7 @@
 	}
 
 /***/ },
-/* 619 */
+/* 620 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -48117,27 +48405,27 @@
 	exports.__esModule = true;
 	exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 
-	var _createStore = __webpack_require__(620);
+	var _createStore = __webpack_require__(621);
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(635);
+	var _combineReducers = __webpack_require__(636);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(637);
+	var _bindActionCreators = __webpack_require__(638);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(638);
+	var _applyMiddleware = __webpack_require__(639);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(639);
+	var _compose = __webpack_require__(640);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(636);
+	var _warning = __webpack_require__(637);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -48161,7 +48449,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(294)))
 
 /***/ },
-/* 620 */
+/* 621 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48170,11 +48458,11 @@
 	exports.ActionTypes = undefined;
 	exports['default'] = createStore;
 
-	var _isPlainObject = __webpack_require__(621);
+	var _isPlainObject = __webpack_require__(622);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _symbolObservable = __webpack_require__(631);
+	var _symbolObservable = __webpack_require__(632);
 
 	var _symbolObservable2 = _interopRequireDefault(_symbolObservable);
 
@@ -48427,12 +48715,12 @@
 	}
 
 /***/ },
-/* 621 */
+/* 622 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseGetTag = __webpack_require__(622),
-	    getPrototype = __webpack_require__(628),
-	    isObjectLike = __webpack_require__(630);
+	var baseGetTag = __webpack_require__(623),
+	    getPrototype = __webpack_require__(629),
+	    isObjectLike = __webpack_require__(631);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -48495,12 +48783,12 @@
 
 
 /***/ },
-/* 622 */
+/* 623 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Symbol = __webpack_require__(623),
-	    getRawTag = __webpack_require__(626),
-	    objectToString = __webpack_require__(627);
+	var Symbol = __webpack_require__(624),
+	    getRawTag = __webpack_require__(627),
+	    objectToString = __webpack_require__(628);
 
 	/** `Object#toString` result references. */
 	var nullTag = '[object Null]',
@@ -48529,10 +48817,10 @@
 
 
 /***/ },
-/* 623 */
+/* 624 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var root = __webpack_require__(624);
+	var root = __webpack_require__(625);
 
 	/** Built-in value references. */
 	var Symbol = root.Symbol;
@@ -48541,10 +48829,10 @@
 
 
 /***/ },
-/* 624 */
+/* 625 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var freeGlobal = __webpack_require__(625);
+	var freeGlobal = __webpack_require__(626);
 
 	/** Detect free variable `self`. */
 	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -48556,7 +48844,7 @@
 
 
 /***/ },
-/* 625 */
+/* 626 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -48567,10 +48855,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 626 */
+/* 627 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Symbol = __webpack_require__(623);
+	var Symbol = __webpack_require__(624);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -48619,7 +48907,7 @@
 
 
 /***/ },
-/* 627 */
+/* 628 */
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -48647,10 +48935,10 @@
 
 
 /***/ },
-/* 628 */
+/* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var overArg = __webpack_require__(629);
+	var overArg = __webpack_require__(630);
 
 	/** Built-in value references. */
 	var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -48659,7 +48947,7 @@
 
 
 /***/ },
-/* 629 */
+/* 630 */
 /***/ function(module, exports) {
 
 	/**
@@ -48680,7 +48968,7 @@
 
 
 /***/ },
-/* 630 */
+/* 631 */
 /***/ function(module, exports) {
 
 	/**
@@ -48715,14 +49003,14 @@
 
 
 /***/ },
-/* 631 */
+/* 632 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(632);
+	module.exports = __webpack_require__(633);
 
 
 /***/ },
-/* 632 */
+/* 633 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, module) {'use strict';
@@ -48731,7 +49019,7 @@
 	  value: true
 	});
 
-	var _ponyfill = __webpack_require__(634);
+	var _ponyfill = __webpack_require__(635);
 
 	var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
@@ -48754,10 +49042,10 @@
 
 	var result = (0, _ponyfill2['default'])(root);
 	exports['default'] = result;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(633)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(634)(module)))
 
 /***/ },
-/* 633 */
+/* 634 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -48773,7 +49061,7 @@
 
 
 /***/ },
-/* 634 */
+/* 635 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -48801,7 +49089,7 @@
 	};
 
 /***/ },
-/* 635 */
+/* 636 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -48809,13 +49097,13 @@
 	exports.__esModule = true;
 	exports['default'] = combineReducers;
 
-	var _createStore = __webpack_require__(620);
+	var _createStore = __webpack_require__(621);
 
-	var _isPlainObject = __webpack_require__(621);
+	var _isPlainObject = __webpack_require__(622);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(636);
+	var _warning = __webpack_require__(637);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -48949,7 +49237,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(294)))
 
 /***/ },
-/* 636 */
+/* 637 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -48979,7 +49267,7 @@
 	}
 
 /***/ },
-/* 637 */
+/* 638 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49035,7 +49323,7 @@
 	}
 
 /***/ },
-/* 638 */
+/* 639 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49046,7 +49334,7 @@
 
 	exports['default'] = applyMiddleware;
 
-	var _compose = __webpack_require__(639);
+	var _compose = __webpack_require__(640);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -49098,7 +49386,7 @@
 	}
 
 /***/ },
-/* 639 */
+/* 640 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -49141,7 +49429,7 @@
 	}
 
 /***/ },
-/* 640 */
+/* 641 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49151,7 +49439,7 @@
 	});
 	exports.routerMiddleware = exports.routerActions = exports.goForward = exports.goBack = exports.go = exports.replace = exports.push = exports.CALL_HISTORY_METHOD = exports.routerReducer = exports.LOCATION_CHANGE = exports.syncHistoryWithStore = undefined;
 
-	var _reducer = __webpack_require__(641);
+	var _reducer = __webpack_require__(642);
 
 	Object.defineProperty(exports, 'LOCATION_CHANGE', {
 	  enumerable: true,
@@ -49166,7 +49454,7 @@
 	  }
 	});
 
-	var _actions = __webpack_require__(642);
+	var _actions = __webpack_require__(643);
 
 	Object.defineProperty(exports, 'CALL_HISTORY_METHOD', {
 	  enumerable: true,
@@ -49211,11 +49499,11 @@
 	  }
 	});
 
-	var _sync = __webpack_require__(643);
+	var _sync = __webpack_require__(644);
 
 	var _sync2 = _interopRequireDefault(_sync);
 
-	var _middleware = __webpack_require__(644);
+	var _middleware = __webpack_require__(645);
 
 	var _middleware2 = _interopRequireDefault(_middleware);
 
@@ -49225,7 +49513,7 @@
 	exports.routerMiddleware = _middleware2['default'];
 
 /***/ },
-/* 641 */
+/* 642 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49268,7 +49556,7 @@
 	}
 
 /***/ },
-/* 642 */
+/* 643 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49310,7 +49598,7 @@
 	var routerActions = exports.routerActions = { push: push, replace: replace, go: go, goBack: goBack, goForward: goForward };
 
 /***/ },
-/* 643 */
+/* 644 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49323,7 +49611,7 @@
 
 	exports['default'] = syncHistoryWithStore;
 
-	var _reducer = __webpack_require__(641);
+	var _reducer = __webpack_require__(642);
 
 	var defaultSelectLocationState = function defaultSelectLocationState(state) {
 	  return state.routing;
@@ -49470,7 +49758,7 @@
 	}
 
 /***/ },
-/* 644 */
+/* 645 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49480,7 +49768,7 @@
 	});
 	exports['default'] = routerMiddleware;
 
-	var _actions = __webpack_require__(642);
+	var _actions = __webpack_require__(643);
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -49508,7 +49796,7 @@
 	}
 
 /***/ },
-/* 645 */
+/* 646 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49536,7 +49824,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 646 */
+/* 647 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49545,9 +49833,9 @@
 	    value: true
 	});
 
-	var _redux = __webpack_require__(619);
+	var _redux = __webpack_require__(620);
 
-	var _reducer = __webpack_require__(647);
+	var _reducer = __webpack_require__(648);
 
 	var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -49558,7 +49846,7 @@
 	});
 
 /***/ },
-/* 647 */
+/* 648 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49611,18 +49899,18 @@
 	    }
 	};
 
-	var _store = __webpack_require__(648);
+	var _store = __webpack_require__(649);
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _immutableProcess = __webpack_require__(650);
+	var _immutableProcess = __webpack_require__(651);
 
 	var _immutableProcess2 = _interopRequireDefault(_immutableProcess);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 648 */
+/* 649 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49631,7 +49919,7 @@
 	    value: true
 	});
 
-	var _immutable = __webpack_require__(649);
+	var _immutable = __webpack_require__(650);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -49667,7 +49955,7 @@
 	});
 
 /***/ },
-/* 649 */
+/* 650 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -54651,7 +54939,7 @@
 	}));
 
 /***/ },
-/* 650 */
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -54667,7 +54955,7 @@
 	    return value;
 	};
 
-	var _immutable = __webpack_require__(649);
+	var _immutable = __webpack_require__(650);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 

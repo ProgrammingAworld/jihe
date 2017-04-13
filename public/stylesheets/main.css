@@ -2176,6 +2176,72 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+div {
+  background: #eee;
+}
+div .spring {
+  margin-top: 20px;
+}
+div .shopperowner,
+div .spring {
+  background: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+div .shopperowner h3,
+div .spring h3 {
+  font-size: 36px;
+  font-weight: normal;
+  border-style: none none none solid;
+  border-left-width: 8px;
+  border-color: red;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+div .shopperowner ul,
+div .spring ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div .shopperowner ul li,
+div .spring ul li {
+  width: 330px;
+}
+div .shopperowner ul li img,
+div .spring ul li img {
+  width: 330px;
+  height: 330px;
+}
+div .shopperowner ul li p,
+div .spring ul li p {
+  width: 100%;
+  font-size: 26px;
+  line-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  padding: 10px;
+}
+div .shopperowner ul li span.price,
+div .spring ul li span.price {
+  font-size: 30px;
+  color: red;
+  padding: 10px;
+  font-weight: 600;
+  line-height: 40px;
+}
+div .shopperowner ul li span.oldPrice,
+div .spring ul li span.oldPrice {
+  font-size: 24px;
+  color: #858585;
+  text-decoration: line-through;
+}
 html,
 body,
 div#app {
